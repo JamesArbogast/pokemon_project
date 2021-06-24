@@ -68,7 +68,7 @@ nav p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
+    padding: 50px 40px 20px 40px;
     box-shadow: black 5px 5px;
 }
 .pokeSnap {
@@ -83,23 +83,22 @@ nav p {
 }
 #stats {
     position: fixed;
-    height: 800px;
-    width: 100%;
+    height: 500px;
+    width: 80%;
     top: 120px;
     background-image: url('/static/img/ui/poke_box.png');
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: 100%;
     display: flex;
     justify-content: space-evenly;
-    padding: 50px;
     font-family: 'EightBit';
 }
 #stat-top {
+    width: 80%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-content: center;
     align-items: center;
-    margin: 10px;
     border-bottom: black 2px solid;
     padding: 5px;
 }
@@ -148,7 +147,7 @@ nav p {
     font-size: 20px;
     box-shadow: black 3px 3px;
 }
-#selector {
+/* #selector {
     position: fixed;
     box-shadow: 0 0 0 2px #000000;
     border-bottom-left-radius: 5px;
@@ -157,7 +156,7 @@ nav p {
     max-height: 150px;
     overflow: auto;
     background-color: black;
-}
+} */
 #regions {
     font-family: 'EightBit';
     color: black;

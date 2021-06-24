@@ -137,9 +137,9 @@ function typeImages(livePoke) {
         var pokeType2 = livePoke.types[1].type.name;
     }
 
-    type1Img.src = "/images/" + pokeType + ".png";
+    type1Img.src = "/static/img/types/" + pokeType + ".png";
     if(livePoke.types.length > 1) {
-        type2Img.src = "/images/" + pokeType2 + ".png";
+        type2Img.src = "/static/img/types/" + pokeType2 + ".png";
     } else {
         type2Img.removeAttribute("src");
     }

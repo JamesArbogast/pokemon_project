@@ -1,0 +1,189 @@
+#full {
+    background-color:lightskyblue;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main h1 {
+    font-family:'PokemonSolid';
+    font-size: 60px;
+    color: red;
+    text-shadow: -1px 0 black, 0 5px black, 5px 0 black, 0 -1px black;
+}
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+nav p {
+    font-family: 'EightBit';
+    font-size: 30px;
+    margin: 20px 60px 0px 20px;
+}
+#main-search {
+    width: 400px;
+    height: 70px;
+    border: black 3px solid;
+    border-radius: 15px;
+    font-size: 40px;
+    font-family: 'EightBit';
+    box-shadow: black 3px 3px;
+    text-transform: uppercase; 
+}
+#catch {
+    border: black 3px solid;
+    border-radius:  15px;
+    font-family: 'PokemonHollow';
+    padding: 0px 70px 10px 70px;
+    margin: 0px 0px 0px 30px;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    box-shadow: black 3px 3px;
+    
+}
+@font-face {
+    font-family: 'PokemonHollow'; /*a name to be used later*/
+    src: url('/fonts/PokemonHollow.ttf'); /*URL to font*/
+}
+@font-face {
+    font-family: 'EightBit';
+    src: url('/fonts/Minecraft.ttf');
+}
+@font-face {
+    font-family: 'PokemonSolid';
+    src: url('/fonts/PokemonSolid.ttf');
+}
+.column {
+    display: flex;
+}
+.pokeBall {
+    background-color: white;
+    border: red 5px solid;
+    border-radius: 50%;
+    margin: 30px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    box-shadow: black 5px 5px;
+}
+.pokeSnap {
+    height: 150px;
+    width: 150px;
+}
+.pokeName {
+    text-transform: capitalize;
+    font-family: 'EightBit';
+    font-size: 20px;
+    margin-top: -10px;
+}
+#stats {
+    position: fixed;
+    height: 700px;
+    width: 60%;
+    top: 120px;
+    background-image: url('images/pokebackround.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+    font-family: 'EightBit';
+}
+#stat-top {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    margin: 10px;
+    border-bottom: black 2px solid;
+}
+#stat-name {
+    font-size: 50px;
+    margin: 10px 10px 10px 40px;
+    text-transform: capitalize;
+}
+#type1 {
+    height: 40px;
+}
+#type2 {
+    height: 40px;
+}
+#stat-mid {
+    display: flex;
+}
+#stat-mid p {
+    text-align: center;
+}
+#default-img {
+    height: 150px;
+}
+#shiny-img {
+    height: 150px;
+}
+#close {
+    position: relative;
+    left: 10px;
+}
+#x {
+    height: 30px;
+}
+#types {
+    display: flex;
+    justify-content: center;
+}
+#region-select {
+    border: black 3px solid;
+    border-radius:  15px;
+    font-family: 'EightBit';
+    padding: 22px 70px 22px 70px;
+    margin: 0px 0px 0px 20px;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    box-shadow: black 3px 3px;
+}
+
+#selector {
+    position: fixed;
+    box-shadow: 0 0 0 2px #000000;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: 2px;
+    max-height: 150px;
+    overflow: auto;
+    background-color: black;
+}
+#regions {
+    font-family: 'EightBit';
+    color: black;
+    font-size: 30px;
+}
+
+#physical {
+    font-family: 'EightBit';
+    color: black;
+    font-size: 20px;
+    margin-right: 50px;
+}
+
+#evolve-img1 {
+    height: 150px;
+}
+
+#evolutions {
+    text-transform: capitalize;
+}
+
+#stat-buttons button {
+    background-color: red;
+    color: white;
+    font-family: 'EightBit';
+    padding: 10px;
+    margin: 10px;
+}
+

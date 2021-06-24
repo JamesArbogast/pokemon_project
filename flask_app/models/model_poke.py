@@ -1,10 +1,10 @@
 from flask_app.config.mysqlconnection import connectToMySQL
-from flask import flash, session
+from flask import flash, session, request
 import re
 
 DATABASE_SCHEMA = 'poke_db'
 
-class Post: #pascal case -> first upper, rest lower, word is singular
+class Poke: #pascal case -> first upper, rest lower, word is singular
     def __init__(self, data):
         self.id = data['id']
         self.location = data['location']
@@ -64,9 +64,6 @@ class Post: #pascal case -> first upper, rest lower, word is singular
             "id" : id
         }
         result = connectToMySQL(DATABASE_SCHEMA).query_db(query, data)
-        print("*"*80)
-        print(result)   
-        print("*"*80)
         return result
 
 #U
@@ -93,15 +90,15 @@ class Post: #pascal case -> first upper, rest lower, word is singular
         return id
 
     @staticmethod
-    def validate_post(post):
+    def validate_post(poke):
         is_valid = True # we assume this is true
-        if len(post['location']) < 5:
+        if len(poke['location']) < 5:
             flash("Location must be at least 5 characters.")
             is_valid = False
-        if len(post['content']) < 5:
+        if len(poke['content']) < 5:
             flash("What happened must be at least 5 characters")
             is_valid = False
-        if len(post['num_of_sas']) < 1:
+        if len(poke['num_of_sas']) < 1:
             flash("There has to have been at least one sasquatch.")
             is_valid = False
         return is_valid

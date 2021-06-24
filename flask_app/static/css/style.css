@@ -45,15 +45,15 @@ nav p {
 }
 @font-face {
     font-family: 'PokemonHollow'; /*a name to be used later*/
-    src: url('/fonts/PokemonHollow.ttf'); /*URL to font*/
+    src: url('/static/fonts/PokemonHollow.ttf'); /*URL to font*/
 }
 @font-face {
     font-family: 'EightBit';
-    src: url('/fonts/Minecraft.ttf');
+    src: url('/static/fonts/Minecraft.ttf');
 }
 @font-face {
     font-family: 'PokemonSolid';
-    src: url('/fonts/PokemonSolid.ttf');
+    src: url('/static/fonts/PokemonSolid.ttf');
 }
 .column {
     display: flex;

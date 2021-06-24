@@ -1,6 +1,6 @@
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
-from flask_app.models.model_post import Post
+from flask_app.models.model_poke import Poke
 from flask_app.models.model_user import User
 
 @app.route('/post/new')
@@ -12,26 +12,26 @@ def post_new():
 
 @app.route('/post/create', methods=['POST'])
 def post_create():
-    is_valid = Post.validate_post(request.form)
+    is_valid = Poke.validate_post(request.form)
     if not is_valid:
         return redirect('/post/create')
     info = {
         **request.form,
         'user_id' : session['uuid']
     }
-    Post.create(info)
+    Poke.create(info)
     return redirect('/')
 
 @app.route('/post/<int:post_id>/delete')
 def post_delete(post_id):
-    post = Post.get_one(post_id)
+    post = Poke.get_one(post_id)
     if post['users_id'] == session['uuid']:
-        Post.delete_one(post_id)
+        Poke.delete_one(post_id)
     return redirect('/')
 
 @app.route('/post/<int:post_id>/edit')
 def edit_post(post_id):
-    post_id = Post.get_one(post_id)
+    post_id = Poke.get_one(post_id)
     context = {
         "post" : post_id,
         "user" : session['uuid']
@@ -40,7 +40,7 @@ def edit_post(post_id):
 
 @app.route('/post/<int:post_id>/update', methods=['POST'])
 def update_post(post_id):
-    is_valid = Post.validate_post(request.form)
+    is_valid = Poke.validate_post(request.form)
     if not is_valid:
         return redirect('/post/<int:post_id>/edit')
     info = {
@@ -50,14 +50,14 @@ def update_post(post_id):
         "num_of_sas": request.form['num_of_sas'],
         "id" : post_id
     }
-    Post.update_one(info)
+    Poke.update_one(info)
     url = f'/post/{post_id}/edit'
     return redirect(url)
 
 @app.route('/post/<int:post_id>/view')
 def view_post(post_id):
-    post_id = Post.get_one(post_id)
-    user_name = Post.get_name_by_post(post_id['users_id'])[0]
+    post_id = Poke.get_one(post_id)
+    user_name = Poke.get_name_by_post(post_id['users_id'])[0]
     context = { 
         "post" : post_id,
         "user_name" : user_name

@@ -6,7 +6,6 @@ var teamNumber = 1;
 var statBox = document.getElementById("stats");
 const searchBar = document.getElementById("main-search");
 
-
 function getPokeName(element) {
     currentPokename = element.value;
 

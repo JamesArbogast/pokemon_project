@@ -83,10 +83,10 @@ nav p {
 }
 #stats {
     position: fixed;
-    height: 700px;
-    width: 60%;
+    height: 800px;
+    width: 100%;
     top: 120px;
-    background-image: url('images/pokebackround.png');
+    background-image: url('/static/img/ui/poke_box.png');
     background-repeat: no-repeat;
     background-size: 100%;
     display: flex;
@@ -101,6 +101,7 @@ nav p {
     align-items: center;
     margin: 10px;
     border-bottom: black 2px solid;
+    padding: 5px;
 }
 #stat-name {
     font-size: 50px;
@@ -147,7 +148,6 @@ nav p {
     font-size: 20px;
     box-shadow: black 3px 3px;
 }
-
 #selector {
     position: fixed;
     box-shadow: 0 0 0 2px #000000;
@@ -163,14 +163,12 @@ nav p {
     color: black;
     font-size: 30px;
 }
-
 #physical {
     font-family: 'EightBit';
     color: black;
     font-size: 20px;
     margin-right: 50px;
 }
-
 #evolve-img1 {
     height: 150px;
 }

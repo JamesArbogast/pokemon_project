@@ -8,7 +8,7 @@ bcrypt = Bcrypt(app)
 def login():
     if 'uuid' in session:
         return redirect('/')
-    return render_template('register.html')
+    return render_template('login.html')
 
 @app.route('/process_login', methods = ['POST'])
 def process_login():
@@ -21,12 +21,10 @@ def process_login():
         flash("Incorrect Password")
         return redirect('/login')
     session['uuid'] = user['id']
-    return redirect('/')
+    return redirect('/', user_id = user)
 
 @app.route('/register')
 def register():
-    if 'uuid' in session:
-        return redirect('/')
     return render_template('register.html')
 
 @app.route('/logout')

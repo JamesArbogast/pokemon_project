@@ -9,7 +9,7 @@ def user_create():
     is_valid = User.validate_user(request.form)
     if not is_valid:
         return redirect('/register')
-    hash_pw = bcrypt.generate_password_hash(request.form['password'])
+    hash_pw = bcrypt.generate_password_hash(request.form['pw'])
     info = {
         **request.form,
         "hash_pw" : hash_pw

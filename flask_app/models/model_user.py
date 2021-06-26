@@ -5,7 +5,7 @@ from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
 import re
 
-DATABASE_SCHEMA = 'python_exam_db'
+DATABASE_SCHEMA = 'poke_db'
 
 class User: #pascal case -> first upper, rest lower, word is singular
     def __init__(self,data):
@@ -20,14 +20,16 @@ class User: #pascal case -> first upper, rest lower, word is singular
 #C
     @classmethod
     def create(cls, info):
-        query = "INSERT INTO users (first_name, last_name, email, password) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(hash_pw)s)"
+        query = "INSERT INTO users (username, first_name, last_name, email, pw) VALUES (%(username)s, %(first_name)s, %(last_name)s, %(email)s, %(hash_pw)s)"
         data = {
+            "username" : info['username'], 
             "first_name" : info['first_name'],
             "last_name" : info['last_name'],
             "email" :   info['email'],
             "hash_pw" : info['hash_pw']
         }
         new_user_id = connectToMySQL(DATABASE_SCHEMA).query_db(query, data)
+        print(new_user_id)
         return new_user_id
 
 #R
@@ -96,6 +98,9 @@ class User: #pascal case -> first upper, rest lower, word is singular
     @staticmethod
     def validate_user(user):
         is_valid = True # we assume this is true
+        if len(user['username']) < 3:
+            flash("USername must be at least 3 characters.")
+            is_valid = False
         if len(user['first_name']) < 2:
             flash("First name must be at least 2 characters.")
             is_valid = False    
@@ -109,10 +114,10 @@ class User: #pascal case -> first upper, rest lower, word is singular
         if not EMAIL_REGEX.match(user['email']):
             flash("Invalid email address.")
             is_valid = False
-        if len(user['password']) < 8:
+        if len(user['pw']) < 8:
             flash("Password must be at least 8 characters.")
             is_valid = False
-        if user['password'] != user['confirm_pw']:
+        if user['pw'] != user['confirm_pw']:
             flash("Password must match confirmation")
             is_valid = False
         return is_valid

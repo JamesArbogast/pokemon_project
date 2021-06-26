@@ -7,31 +7,33 @@
     <title>Register</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
-    <h1>Register</h1>
-    <form action="/user/create" method="post">
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <p>{{message}}</p>
-            {% endfor %}
-        {% endif%}
-        {% endwith %}
-        <label for="username">Username</label>
-        <input type="text">Username
-        <label for="first_name">First Name</label>
-        <input type="text" name="first_name">
-        <label for="last_name">Last Name</label>
-        <input type="text" name="last_name">
-        <label for="email">Email</label>
-        <input type="text" name="email">
-        <label for="password">Password</label>
-        <input type="text" name="password">
-        <label for="confirm_pw">Confirm Password</label>
-        <input type="text" name="confirm_pw">
-        <button>Register</button>
-    </form>
-    <p>Already have an account? <a href="/login">Login here!</a></p>
-    </form>
+<body id="full">
+    <div id="main">
+        <h1>Register</h1>
+        <form action="/user/create" method="post" id="form">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif%}
+            {% endwith %}
+            <label for="username">Username</label>
+            <input type="text" name="username">
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name">
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name">
+            <label for="email">Email</label>
+            <input type="text" name="email">
+            <label for="pw">Password</label>
+            <input type="text" name="pw">
+            <label for="confirm_pw">Confirm Password</label>
+            <input type="text" name="confirm_pw">
+            <button>Register</button>
+        </form>
+        <p>Already have an account? <a href="/login">Login here!</a></p>
+        </form>
+    </div>
 </body>
 </html>

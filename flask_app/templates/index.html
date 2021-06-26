@@ -11,6 +11,10 @@
 <body>
     <div id="full">
         <nav>
+            {% if session['uuid'] != null%}
+            <p>{{user_id['first_name']}}</p>
+            {% endif %}
+            <a href="/register"><p>REGISTER</p></a>
             <a href="/login"><p>LOGIN</p></a>
         </nav>
         <main>

@@ -1,5 +1,6 @@
 #full {
     background-color:lightskyblue;
+    font-family: 'Eightbit';
 }
 main {
     display: flex;
@@ -183,4 +184,41 @@ nav p {
     padding: 10px;
     margin: 10px;
 }
+
+#form {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+#form button {
+    margin-top: 40px;
+    text-align: center;
+    font-family: 'Eightbit';
+    font-weight: bold;
+    font-size: 20px;
+    padding: 15px 0px 15px 10px;
+    background-color: rgb(25, 226, 25);
+    border-radius: 15px;
+    border: black 3px solid;
+    box-shadow: black 3px 3px;
+    color: black
+}
+
+#form input{
+    height: 30px;
+    font-family: 'Eightbit';
+    border-radius: 15px;
+    border: black 3px solid;
+    box-shadow: black 3px 3px;
+}
+
+#form label {
+    margin: 20px 0px 5px 7px;
+}
+
+#main {
+    margin: 40px
+}
+
 

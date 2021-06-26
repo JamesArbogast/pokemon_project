@@ -2,7 +2,7 @@ from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash, session
 import re
 
-DATABASE_SCHEMA = 'python_exam_db'
+DATABASE_SCHEMA = 'poke_db'
 
 class Post: #pascal case -> first upper, rest lower, word is singular
     def __init__(self, data):

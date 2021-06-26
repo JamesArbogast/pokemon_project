@@ -17,11 +17,11 @@ def process_login():
         print("User doesn't exist")
         return redirect('/login')
     user = list_of_users[0]
-    if not bcrypt.check_password_hash(user['password'], request.form['password']):
+    if not bcrypt.check_password_hash(user['pw'], request.form['pw']):
         flash("Incorrect Password")
         return redirect('/login')
     session['uuid'] = user['id']
-    return redirect('/', user_id = user)
+    return redirect('/')
 
 @app.route('/register')
 def register():

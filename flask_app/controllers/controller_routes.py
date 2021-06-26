@@ -5,16 +5,17 @@ from flask_app.models.model_user import User
 
 @app.route('/')
 def index():
-    #if 'uuid' not in session:
-    #   return redirect('/register')
-    return render_template('index.html')
+    if 'uuid' not in session:
+        return redirect('/login')
+    return redirect('/dashboard')
 
 @app.route('/dashboard')
 def dashboard():
     if 'uuid' not in session:
-        return redirect('/register')
+        return redirect('/login')
     context = { 
         "user" : User.get_one(session['uuid'])[0],
-        "all_posts" : Poke.get_all()    
+        #"all_posts" : Poke.get_all()
     }
+    print(User.get_one(session['uuid'])[0])
     return render_template('dashboard.html', **context)

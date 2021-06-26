@@ -9,7 +9,7 @@
 </head>
 <body id="full">
     <h1>Login</h1>
-    <form action="/user/create" method="post" id="form">
+    <form action="/process_login" method="post" id="form">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
@@ -19,7 +19,7 @@
         {% endwith %}
         <label for="email">Email</label>
         <input type="text" name="email">
-        <label for="password">Password</label>
+        <label for="pw">Password</label>
         <input type="text" name="pw">
         <button>Register</button>
     </form>

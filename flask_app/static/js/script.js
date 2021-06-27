@@ -3,6 +3,7 @@ var pokeTeam = [];
 var allPokes = [];
 var evolutions = [];
 var teamNumber = 1;
+var livePoke;
 var statBox = document.getElementById("stats");
 const searchBar = document.getElementById("main-search");
 
@@ -80,6 +81,14 @@ function addToTeam(newPoke) {
     }
 }
 
+function removeFromTeam() {
+    pokeTeam.remove(livePoke);
+    if(teamNumber > 0) {
+        teamNumber--;
+    }
+    closeBox();
+}
+
 function evolve(poke) {
     var pokeSnap = document.querySelector("#pokeSnap" + teamNumber);
     var pokeName = document.querySelector("#pokeName" + teamNumber);
@@ -107,7 +116,7 @@ function statDisplay(num) {
     var statSnap1 = document.querySelector("#default-img");
     var statSnap2 = document.querySelector("#shiny-img");
     var statBox = document.getElementById("stats");
-    statBox.style.display = "block";
+    statBox.style.display = "flex";
     statName.innerText = livePoke.name;
     statSnap1.src = livePoke.sprites.front_default;
     statSnap2.src = livePoke.sprites.front_shiny;

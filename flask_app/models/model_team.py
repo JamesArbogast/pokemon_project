@@ -84,7 +84,7 @@ class Post: #pascal case -> first upper, rest lower, word is singular
         return result
 #D
     @classmethod
-    def delete_one(cls, id):
+    def remove_one(cls, id):
         query = "DELETE FROM posts WHERE id=%(id)s;"
         data = {
             "id": id

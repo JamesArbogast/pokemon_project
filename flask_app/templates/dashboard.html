@@ -12,10 +12,14 @@
     <div id="full">
         <nav>
             {% if session['uuid'] == user['id'] %}
-            <p>{{user['username']}}</p>
+                <p>{{user['username']}}</p>
+            {% endif %} 
+            {% if session['uuid'] == 0 %}
+                <a href="/register"><p>REGISTER</p></a>
+                <a href="/login"><p>LOGIN</p></a>
+            {% elif session['uuid'] != 0 %}
+                <a href="/logout"><p>LOGOUT</p></a>
             {% endif %}
-            <a href="/register"><p>REGISTER</p></a>
-            <a href="/login"><p>LOGIN</p></a>
         </nav>
         <main>
             <h1>Build a PokeTeam</h1>
@@ -64,39 +68,39 @@
                     </div>
                 </div>
             </div>
-            <div id="stats" style="display: none">
-                <div id="stat-top">
-                    <p id="stat-name">James</p>
-                    <div id="types">
-                        <img id="type1">
-                        <img id="type2">
-                    </div>
-                    <div id="stat-buttons">
-                        <button id="remove-button">Remove</button>
-                        <button id="evolve-button">Evolve</button>
-                    </div>
-                    <div id="close">
-                        <img src="/static/img/ui/pixelx.png" onclick="closeBox()" id="x">
-                    </div>
-                </div>
-                <div id="stat-mid">
-                    <div id="normal">
-                        <p>Normal</p>
-                        <img id="default-img">
-                    </div>
-                    <div id="shiny">
-                        <p>Shiny</p>
-                        <img id="shiny-img">
-                    </div>
-                    <div id="physical">
-                        <p id="height"></p>
-                        <p id="weight"></p>
-                    </div>  
-                    <div id="evolutions">
-                        <img id="evolve-img1">
-                        <p id="evolve-name"></p> 
-                    </div>     
-                </div>
+    <div id="stats" style="display: none">
+        <div id="stat-top">
+            <p id="stat-name">James</p>
+            <div id="types">
+                <img id="type1">
+                <img id="type2">
+            </div>
+            <div id="stat-buttons">
+                <button id="remove-button" onclick="removeFromTeam()">Remove</button>
+                <button id="evolve-button">Evolve</button>
+            </div>
+            <div id="close">
+                <img src="/static/img/ui/pixelx.png" onclick="closeBox()" id="x">
+            </div>
+        </div>
+        <div id="stat-mid">
+            <div id="normal">
+                <p>Normal</p>
+                <img id="default-img">
+            </div>
+            <div id="shiny">
+                <p>Shiny</p>
+                <img id="shiny-img">
+            </div>
+            <div id="physical">
+                <p id="height"></p>
+                <p id="weight"></p>
+            </div>  
+            <div id="evolutions">
+                <img id="evolve-img1">
+                <p id="evolve-name"></p> 
+            </div>     
+        </div>
             </div>
             <div id="stats-2" style="display: none;">
 
